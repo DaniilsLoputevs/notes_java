@@ -19,11 +19,9 @@ import java.util.*
  * Calendar ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Date ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Long(milliseconds) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *
- * Date      (SQL) (extends from java.util.Date)
- * Time      (SQL) (extends from java.util.Date)
- * Timestamp (SQL) (extends from java.util.Date)
- * todo - offset & zoned classes convert with option(process OR ignore (offset || zone) info)
+ * Date      (SQL) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * Time      (SQL) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * Timestamp (SQL) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  */
 class LocalDateTimeMapperTest {
     private val mapper = LocalDateTimeMapper()
@@ -54,6 +52,9 @@ class LocalDateTimeMapperTest {
     private val inZonedDateTime: ZonedDateTime = ZonedDateTime.of(resultString, zoneId)
     private val inMills: Long = resultString.toInstant(ZoneOffset.ofTotalSeconds(0)).toEpochMilli()
 
+    private val inSqlDate: java.sql.Date = java.sql.Date.valueOf(inLocalDate)
+    private val inSqlTime: java.sql.Time = java.sql.Time.valueOf(inLocalTime)
+    private val inSqlTimestamp: java.sql.Timestamp = java.sql.Timestamp.valueOf(resultString)
 
 
     @Test fun stringDefaultISO() = assertEquals(resultString, mapper.from("2023-05-18T07:00:00"))
@@ -67,9 +68,7 @@ class LocalDateTimeMapperTest {
     @Test fun instantDefault() = assertEquals(resultInstantDefault, mapper.from(inInstant))
     @Test fun instantOffset() = assertEquals(resultInstantOffset, mapper.from(inInstant, zoneId))
 
-    /* Offset & Zoned classes just return Original LocalDateTime - extra info doesn't affect on this situation */
     @Test fun offsetDateTime() = assertEquals(resultString, mapper.from(inOffsetDateTime))
-
     @Test fun offsetTime() = assertEquals(resultLocalTime, mapper.from(inOffsetTime))
     @Test fun offsetTimeAddOffset() = assertEquals(resultLocalTimeAddOffset, mapper.from(inOffsetTime, true))
     @Test fun zonedDateTime() = assertEquals(resultString, mapper.from(inZonedDateTime))
@@ -77,8 +76,17 @@ class LocalDateTimeMapperTest {
 
     @Test fun calendar() = assertEquals(resultString, mapper.from(inCalendar))
     @Test fun date() = assertEquals(resultString, mapper.from(inDate))
-
     @Test fun milliseconds() = assertEquals(resultInstantDefault, mapper.from(inMills))
 
+    /* java.sql
+     * this Classes extends from java.lang.Date but in fact these classes break the Parent API contract
+     * by throwing Exceptions when calling some methods.
+     * This is the reason why there is a Separate API for working with Classes from java.sql package.
+     */
+
+    @Test fun sqlDate() = assertEquals(resultLocalDate, mapper.from(inSqlDate))
+    @Test fun sqlTime() = assertEquals(resultLocalTime, mapper.from(inSqlTime))
+    @Test fun sqlDateAndTime() = assertEquals(resultString, mapper.from(inSqlDate, inSqlTime))
+    @Test fun sqlTimestamp() = assertEquals(resultString, mapper.from(inSqlTimestamp))
 
 }

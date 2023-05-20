@@ -55,7 +55,6 @@ public class LocalDateTimeMapper {
         return LocalDateTime.of(localDate, localTime);
     }
     
-    
     /**
      * Code example:
      * <pre>{@code
@@ -68,7 +67,6 @@ public class LocalDateTimeMapper {
     public LocalDateTime from(Instant instant) {
         return this.from(instant, Clock.systemDefaultZone().getZone());
     }
-    
     
     /**
      * {@link java.time.Instant} is the class encapsulating the time elapsed from the standard Java epoch(beginning of time in Java)
@@ -133,10 +131,11 @@ public class LocalDateTimeMapper {
     public LocalDateTime from(ZonedDateTime zonedDateTime) {
         return this.from(zonedDateTime, false);
     }
+    
     /**
      * @param addZoneOffset - input "07:00+05:00"
-     *                  true  -> return currentDate + "12:00" // 2023-05-18 12:00:00
-     *                  false -> return currentDate + "07:00" // 2023-05-18 07:00:00
+     *                      true  -> return currentDate + "12:00" // 2023-05-18 12:00:00
+     *                      false -> return currentDate + "07:00" // 2023-05-18 07:00:00
      */
     public LocalDateTime from(ZonedDateTime zonedDateTime, boolean addZoneOffset) {
         return addZoneOffset
@@ -163,6 +162,31 @@ public class LocalDateTimeMapper {
      */
     public LocalDateTime from(long milliseconds) {
         return this.from(Instant.ofEpochMilli(milliseconds));
+    }
+    
+    /**
+     * @see LocalDateTimeMapper#from(LocalDate)
+     */
+    public LocalDateTime from(java.sql.Date date) {
+        return this.from(date.toLocalDate());
+    }
+    
+    /**
+     * @see LocalDateTimeMapper#from(LocalTime)
+     */
+    public LocalDateTime from(java.sql.Time time) {
+        return this.from(time.toLocalTime());
+    }
+    
+    /**
+     * @see LocalDateTimeMapper#from(LocalDate, LocalTime)
+     */
+    public LocalDateTime from(java.sql.Date date, java.sql.Time time) {
+        return this.from(date.toLocalDate(), time.toLocalTime());
+    }
+    
+    public LocalDateTime from(java.sql.Timestamp timestamp) {
+        return timestamp.toLocalDateTime();
     }
     
 }

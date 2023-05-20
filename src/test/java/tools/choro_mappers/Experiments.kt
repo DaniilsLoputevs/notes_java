@@ -10,23 +10,16 @@ class Experiments {
     private val mapper = LocalDateTimeMapper()
 
     @Test fun runLocalDateTime_Instant3() {
-//        val date = LocalDateTime.of(1970, 1, 1, 0, 0)
-        val date = LocalDateTime.of(2023, 5, 18, 7, 0)
-
-        val mills = date.toInstant(ZoneOffset.ofTotalSeconds(0)).toEpochMilli()
-        println("Initial Epoch (TimeInMillis): " + mills)
-        val inst = Instant.ofEpochMilli(mills)
-        println("inst = $inst")
-        println("rsl = ${mapper.from(inst)}")
-
-
-        val o = (53*5*18*7*1*1*1_000).also { println(it) }
-        val s = System.currentTimeMillis().also { println(it) }
+       val formatter: DateTimeFormatter = LocalDateTimeMapper.YYYY_MM_DD__HH_MM_SS
+       val resultLocalDate = LocalDateTime.parse("2023-05-18 00:00:00", formatter)
+        val o = java.sql.Timestamp.valueOf(resultLocalDate)
+        println(o)
+        println(resultLocalDate)
     }
 
     @Test fun runLocalDateTime_Instant2() {
 
-        val now = LocalDateTime.now()
+//        val now = LocalDateTime.now()
 //        val off1 = OffsetDateTime.of(now, ZoneOffset.ofHours(3))
 //        val off2 = OffsetDateTime.now()
 //        println(now)
