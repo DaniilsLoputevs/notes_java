@@ -1,4 +1,4 @@
-package interview.yandex;
+package interview.yandex.k_n_nearest_easy;
 
 /*
 Дан отсортированный массив целых чисел arr, индекс элемента index и целое число K.
@@ -17,13 +17,11 @@ rsl = [5, 3, 2]
 ** между 8 и 2 для 5 выбирает 2.
  */
 
-import java.util.List;
-
-public class KNearestEasyTemplate {
-    
-    public List<Integer> findClosestElements(int[] arr, int index, int k) {
-        // write your code here...
-        return null;
-    }
-    
-}
+//public class KNearestEasyTemplate {
+//
+//    public List<Integer> findClosestElements(int[] arr, int index, int k) {
+//        // write your code here...
+//        return null;
+//    }
+//
+//}

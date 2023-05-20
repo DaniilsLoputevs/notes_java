@@ -16,12 +16,6 @@ private val empty = listOf<Int>()
 private val expect_twoList = listOf(1, 6, 2, 7, 3, 8, 4, 9, 5, 10)
 private val expect_threeLists = listOf(1, 3, 7, 2, 4, 8, 5, 9, 6, 10)
 
-/**
- * run configuration:
- * pattern :
- *     leetcode.ZigZagIteratorTestK$ZigZagIterator_DaniilsV1
- *     ||leetcode.ZigZagIteratorTestK$ZigZagIterator_DaniilsV2
- */
 interface ZigZagIteratorTestK {
     @Test fun twoLists() = assertEquals(expect_twoList, test(v1, v2))
     @Test fun threeLists() = assertEquals(expect_threeLists, test(e1, e2, e3))

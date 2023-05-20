@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test
 
 /**
  * Input:
- * 5
- * / \
- * 3   5
- * / \   \
+ *     5
+ *    / \
+ *   3   5
+ *  / \   \
  * 4   6   7
  * /
  * 4

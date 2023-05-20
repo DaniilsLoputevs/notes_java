@@ -1,4 +1,4 @@
-package interview.yandex;
+package interview.yandex.k_n_nearest_easy;
 
 import java.util.ArrayList;
 import java.util.List;

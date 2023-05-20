@@ -1,4 +1,4 @@
-package interview.yandex;
+package interview.yandex.k_n_nearest_easy;
 
 /*
 Дан отсортированный массив целых чисел a , индекс элемента index и целое число K .
