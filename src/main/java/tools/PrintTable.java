@@ -230,6 +230,7 @@ public class PrintTable<E> {
         for (var column : columns) {
             rsl.append("| ");
             
+            // todo = var cellContentLength = column.name.length()
             var minWidth = Optional.ofNullable(column.options).map(ColumnOptions::getMinWidth).orElse(AUTO_FIT);
             var alignSpaceNum = (AUTO_FIT.equals(minWidth))
                     ? column.maxCellWidth - column.name.length()
@@ -523,5 +524,3 @@ class Column<E, CVT> {
         return colour.txtColour + txt + TEXT_RESET;
     }
 }
-
-

@@ -18,7 +18,8 @@ import static tools.DefaultFormatterBuilder.*;
 
 
 /**
- * TODO : сделать цвет по возможности - проблема line size + formatter ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * DONE:
+ * TODO : colours & fix problem with (line size + formatter) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * TODO : PrintTable.ofStream() && .append() && print() as Terminal operations ^^^^^^^^^^^^^^^^^^^^^
  * TODO : .columnRowCount(String name, String pattern) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * TODO : append to table name: element count (do it automatically) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -32,6 +33,14 @@ import static tools.DefaultFormatterBuilder.*;
  * TODO : buildEachLine (append Iterable || Stream) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * TODO : count row for insert to SB into start with TableName ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * TODO : compile on Java9 (java8 with replace var -> actual variable type) ^^^^^^^^^^^^^^^^^^^^^^^^
+ * </p>
+ * FUTURE:
+ * TODO : sort & filter operations - for append data
+ * TODO : all terminal operation start with to...() [toConsumer(), toPrint(), toAppendable]
+ * TODO : serialize & deserialize by existing config (toString() & fromString() )
+ * TODO : impl - base method appendCellValueTo(StringBuilder sb)
+ * TODO : getTableData & receive data for declare column value (excel formula? )
+ * TODO : more tests
  */
 public class PrintTableTest {
     private static final String LS = System.lineSeparator();
