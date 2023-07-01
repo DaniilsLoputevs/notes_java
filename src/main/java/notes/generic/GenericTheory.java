@@ -142,7 +142,7 @@
 //
 //
 //
-//|             | init collection   | get/read(safe cast) | put/write(avoid mismatch assign) |
+//            |             | init collection   | get/read(safe cast) | put/write(avoid mismatch assign) |
 //            |-------------|-------------------|---------------------|----------------------------------|
 //            | T           | this(only)        | this & super type   | this & sub type                  |
 //            | ? super T   | this & super type | Object(only)        | this & sub type                  |
@@ -162,7 +162,8 @@
 //// --- Exception <----------------------
 //// ---- IOException
 //// ----- FileNotFoundException
-//// ----  IndexOutOfBoundsException
+//// ---- RuntimeException
+//// ----- IndexOutOfBoundsException
 //// --- Error
 //// ---- OutOfMemoryError
 //// ---- AssertionError

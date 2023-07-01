@@ -1,4 +1,4 @@
-package leetcode;
+package notes.generic;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

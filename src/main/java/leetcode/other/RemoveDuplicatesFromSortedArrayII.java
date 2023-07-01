@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.other;
 
 import lombok.val;
 
@@ -9,12 +9,10 @@ public class RemoveDuplicatesFromSortedArrayII {
     public static void main(String[] args) {
 //        val array = new int[]{0, 0, 1, 1, 1, 1, 2, 2, 3};
         val array = new int[]{0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 4};
-        val rsl = new Solution().removeDuplicates(array);
+        val rsl = new RemoveDuplicatesFromSortedArrayII().removeDuplicates(array);
         System.out.printf("rsl: %s || array: %s\r\n", rsl, Arrays.toString(array));
     }
-}
-
-class Solution {
+    
     private static final int EMPTY = -1000_000;
     
     public int removeDuplicates(int[] nums) {
@@ -51,4 +49,5 @@ class Solution {
         return size;
     }
 }
+
 

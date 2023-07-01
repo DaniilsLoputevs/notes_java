@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.other;
 
 import java.util.AbstractList;
 import java.util.Collection;

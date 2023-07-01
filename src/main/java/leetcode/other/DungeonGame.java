@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.other;
 
 import lombok.val;
 
