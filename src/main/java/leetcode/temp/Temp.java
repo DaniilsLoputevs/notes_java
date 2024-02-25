@@ -1,24 +1,66 @@
 package leetcode.temp;
 
-import leetcode.other.ListNode;
+import leetcode.structures.ListNode;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Temp {
+    @Override public int hashCode() {
+        return super.hashCode();
+    }
+    
+    public static void main(String[] args) {
+        String[] arr = new String[]{"1", "2", "3"};
+        List<String> list = Arrays.asList(arr); // FixedSizeArrayList
+        System.out.println(Arrays.toString(arr));
+        System.out.println(list);
+        arr[1] = "-111";
+        System.out.println(Arrays.toString(arr));
+        System.out.println(list);
+        List<String> list1 = new ArrayList<>(list);
+        list.set(1, "__");
+        System.out.println(list);
+        System.out.println(list1);
+        
 
-
+        
+        
+        
+        
+        
+        
+        
+        
+        // (arg) -> {return void}    - Consumer
+        // (arg) -> {return ...}     - Function
+        // () -> {return ...}        - Supplier
+        // (arg) -> {return boolean} - Predicate
+        
+        Comparator<Integer> c1 = (a, b) -> Integer.compare(a,b);
+        Comparator<Integer> c2 = (a, b) -> Integer.compare(a,b);
+        c1.reversed();
+        c1.thenComparing(c2);
+        Stream.of()
+//                .parallel()
+                .sorted()
+//                .filter()
+                .findAny();
+    }
+    
+    
     // n = total count of Nodes.
     // time : O(k + n)
     // space: O(2k + n)  O(n)
     static class Solution {
         public ListNode mergeKLists(ListNode[] lists) {
             if (lists.length == 0) return null;
-            var heap = new PriorityQueue<ListNode>(lists.length,Comparator.<ListNode>comparingInt(node -> node.val) );
+            var heap = new PriorityQueue<ListNode>(lists.length, Comparator.<ListNode>comparingInt(node -> node.val));
             ListNode head = null;
             ListNode current = null;
             
             for (var node : lists) {
-                if (node == null ) continue;
+                if (node == null) continue;
                 heap.offer(node);
             }
             
@@ -38,36 +80,38 @@ public class Temp {
             return head;
         }
 //
-
-    
-    public static void main(String[] args) {
-        // 1,3,4,6
-        // 1,2,5,7
-        // -4,0,4,7
-        var lists = new ListNode[] {
-                new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(6)))),
-                new ListNode(1, new ListNode(2, new ListNode(5, new ListNode(7)))),
-                new ListNode(-4, new ListNode(0, new ListNode(4, new ListNode(7)))),
-        };
-        var tmp = new Solution().mergeKLists(lists);
-        var rsl = new ArrayList<Integer>();
-        var iter = new Solution.ListNodeIterator(tmp);
-        while (iter.hasNext()) {
-            rsl.add(iter.next());
+        
+        
+        public static void main(String[] args) {
+            // 1,3,4,6
+            // 1,2,5,7
+            // -4,0,4,7
+            var lists = new ListNode[]{
+                    new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(6)))),
+                    new ListNode(1, new ListNode(2, new ListNode(5, new ListNode(7)))),
+                    new ListNode(-4, new ListNode(0, new ListNode(4, new ListNode(7)))),
+            };
+            var tmp = new Solution().mergeKLists(lists);
+            var rsl = new ArrayList<Integer>();
+            var iter = new Solution.ListNodeIterator(tmp);
+            while (iter.hasNext()) {
+                rsl.add(iter.next());
+            }
+            
+            System.out.println(rsl);
         }
         
-        System.out.println(rsl);
-    }
         static class ListNodeIterator {
             ListNode node;
-        
+            
             public ListNodeIterator(ListNode node) {
                 this.node = node;
             }
-        
+            
             public boolean hasNext() {
                 return this.node != null;
             }
+            
             public int next() {
                 int value = node.val;
                 this.node = node.next;
@@ -75,7 +119,6 @@ public class Temp {
             }
         }
     }
-    
     
     
     public static class Out {
@@ -90,11 +133,12 @@ public class Temp {
             private String id = "222";
         }
     }
+    
     private void showInnerClass() {
         System.out.println(new Out().in);
         System.out.println((Out.In) new Out().in);
 //            System.out.println((Out.In)new Out.In()); // compile err: 'leetcode.temp.Temp.Out' is not an enclosing class
-    
+        
         System.out.println(new Out().name);     // 1
 //        System.out.println(new Out.In());       // 2
         System.out.println(new Out.InStatic()); // 3

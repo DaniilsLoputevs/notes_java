@@ -21,15 +21,15 @@ import org.junit.jupiter.api.Test
  */
 internal class NeoCryptoKtTest {
     private val obj = NeoCrypto()
-    private val root = TreeNode(5).apply {
-        left = TreeNode(3).apply {
-            left = TreeNode(4).apply {
-                left = TreeNode(4)
+    private val root = NeoCrypto.TreeNode(5).apply {
+        left = NeoCrypto.TreeNode(3).apply {
+            left = NeoCrypto.TreeNode(4).apply {
+                left = NeoCrypto.TreeNode(4)
             }
-            right = TreeNode(6)
+            right = NeoCrypto.TreeNode(6)
         }
-        right = TreeNode(5).apply {
-            right = TreeNode(7)
+        right = NeoCrypto.TreeNode(5).apply {
+            right = NeoCrypto.TreeNode(7)
         }
     }
     private val LS = System.lineSeparator()

@@ -12,6 +12,8 @@ public interface GUIFactory {
     
     Statistics getStatistics();
     
+//    List<Class<?>> supportComponents();
+    
     class Statistics {
         @Getter private long buttonCreated;
         @Getter private long checkboxCreated;

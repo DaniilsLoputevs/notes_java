@@ -1,12 +1,14 @@
 package interview
 
-data class TreeNode(
-    val value: Int,
-    var left: TreeNode? = null,
-    var right: TreeNode? = null,
-)
 
 class NeoCrypto {
+
+    data class TreeNode(
+        val value: Int,
+        var left: TreeNode? = null,
+        var right: TreeNode? = null,
+    )
+
     fun levels(root: TreeNode): String {
         /* write code here */
         val queue = mutableListOf(Pair(0, root))

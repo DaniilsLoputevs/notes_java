@@ -1,5 +1,7 @@
 package leetcode.other;
 
+import leetcode.structures.ListNode;
+
 public class MiddleOfLinkedList {
     public ListNode middleNode(ListNode head) {
         ListNode slow = head;
@@ -21,6 +23,7 @@ public class MiddleOfLinkedList {
 //                                                new ListNode(6, null)
                                         )))));
         var rsl = new MiddleOfLinkedList().middleNode(head);
+        System.out.println(ListNode.toStringAsList(rsl));
         System.out.println(rsl.val);
     }
 }

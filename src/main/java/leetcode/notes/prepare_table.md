@@ -1,9 +1,9 @@
-[ ] 
+
 linked lists:
-- [ ] (Hard) https://leetcode.com/problems/merge-k-sorted-lists/
+- [X] (Hard) https://leetcode.com/problems/merge-k-sorted-lists/
 - [ ] (Easy) https://leetcode.com/problems/linked-list-cycle/
-- [ ] (Medium) https://leetcode.com/problems/add-two-numbers/
-- [ ] (Easy) https://leetcode.com/problems/reverse-linked-list/
+- [X] (Medium) https://leetcode.com/problems/add-two-numbers/
+- [X] (Easy) https://leetcode.com/problems/reverse-linked-list/
 
 binary search:
 - [ ] https://leetcode.com/problems/binary-search/
@@ -13,8 +13,9 @@ binary search:
 - [ ] https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 - [ ] https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 
-hash table:
+bitwise:
 - [ ] https://leetcode.com/problems/single-number/ - решить за O(1) по памяти
+hash table:
 - [ ] https://leetcode.com/problems/two-sum/
 - [ ] https://leetcode.com/problems/4sum/
 - [ ] https://leetcode.com/problems/group-anagrams/
@@ -25,8 +26,8 @@ queue/stack:
 - [ ] https://leetcode.com/problems/valid-parentheses/
 
 dfs/bfs:
-- [ ] https://leetcode.com/problems/number-of-islands/
-- [ ] https://leetcode.com/problems/remove-invalid-parentheses/
+- [ ] (Medium) https://leetcode.com/problems/number-of-islands/
+- [ ] (Hard) https://leetcode.com/problems/remove-invalid-parentheses/
 
 sort:
 - [ ] https://leetcode.com/problems/merge-intervals/
@@ -40,9 +41,9 @@ two pointers:
 - [ ] https://leetcode.com/problems/partition-labels/
 
 sliding window:
-- [ ] https://leetcode.com/problems/sliding-window-median/
-- [ ] https://leetcode.com/problems/sliding-window-maximum/
-- [ ] https://leetcode.com/problems/longest-repeating-character-replacement/
+- [ ] (Hard) https://leetcode.com/problems/sliding-window-median/
+- [ ] (Hard) https://leetcode.com/problems/sliding-window-maximum/
+- [ ] (Medium) https://leetcode.com/problems/longest-repeating-character-replacement/
 
 tree:
 - [ ] https://leetcode.com/problems/same-tree/
@@ -55,4 +56,3 @@ greedy problems:
 - [ ] https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 - [ ] https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
 - [ ] https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
-- ```

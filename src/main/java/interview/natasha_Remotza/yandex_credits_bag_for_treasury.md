@@ -402,7 +402,7 @@ public class Person {
     * тут стринг для простоты
     */
    @Column(nullable = false)
-   private String type;
+   private String modifier;
 
    @OneToMany(mappedBy = "person")
    private List<Payment> paymentList = new ArrayList<>();
